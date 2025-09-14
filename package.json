@@ -1,0 +1,72 @@
+{
+  "name": "qwen-local-coder",
+  "displayName": "Qwen Local Coder",
+  "description": "A lightweight VS Code extension that uses a locally hosted Qwen2 (e.g., at http://127.0.0.1:8755) to generate, explain, and autocomplete code. Configure the service URL in settings.",
+  "version": "0.1.0",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:qwen.generateFile",
+    "onCommand:qwen.explainSelection",
+    "onCommand:qwen.analyzeWorkspace",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:python",
+    "onLanguage:java"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Qwen Local Coder",
+      "properties": {
+        "qwen.serviceUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8755",
+          "description": "Base URL for your locally running Qwen2 service (e.g., http://127.0.0.1:8755)."
+        },
+        "qwen.apiMode": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "openai",
+            "simple"
+          ],
+          "description": "API mode. 'openai' if your local service implements OpenAI-compatible chat/completions; 'simple' if it exposes a /generate endpoint; 'auto' will try openai then simple."
+        },
+        "qwen.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Optional API key if your local service requires one."
+        },
+        "qwen.maxTokens": {
+          "type": "number",
+          "default": 1024
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "qwen.generateFile",
+        "title": "Qwen: Generate File from Description"
+      },
+      {
+        "command": "qwen.explainSelection",
+        "title": "Qwen: Explain Selection / Debug"
+      },
+      {
+        "command": "qwen.analyzeWorkspace",
+        "title": "Qwen: Analyze Workspace and Suggest Changes"
+      }
+    ]
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}

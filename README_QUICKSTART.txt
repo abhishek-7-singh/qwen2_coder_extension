@@ -1,0 +1,1 @@
+Open the folder in VS Code. Run `npm install`. Then press F5 to run the extension in a new Extension Host window.
