@@ -8,7 +8,7 @@ Phi3 Local Coder is a privacy-first Visual Studio Code extension that connects y
 - **Workspace analysis** – scan the project tree and get prioritized improvement ideas.
 - **Flexible API support** – works with OpenAI-compatible `/v1/chat/completions` endpoints or simple `/generate` endpoints.
 
-> ℹ️ The extension integrates with an already running Phi3 service. It does not fine-tune or host models for you.
+>  The extension integrates with an already running Phi3 service. It does not fine-tune or host models for you.
 
 ## Quick Start
 
@@ -78,10 +78,8 @@ See `DOCUMENTATION_PROJECT.md` for a deep architectural walkthrough and `DOCUMEN
 ## Contributing
 Pull requests and issues are welcome. Please open a discussion before large changes. Run `npm install` and use the extension host (`F5`) for development.
 
-## License
 
-Released under the MIT License. See `LICENSE` for details.
 
 ---
 
-Questions or ideas? Open an issue—feedback helps steer the next features.
+
